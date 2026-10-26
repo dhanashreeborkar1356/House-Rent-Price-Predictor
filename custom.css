@@ -1,0 +1,591 @@
+/* ====================================================================
+   RentWise AI — Custom Design System & Modern UI Stylesheet
+   Color Palette: White, Light Grey (#F8FAFC), Navy (#0F172A), Teal (#0D9488)
+   ==================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+/* Main font application */
+html, body, [class*="css"] {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Background refinement */
+.stApp {
+    background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%);
+    color: #0F172A;
+}
+
+/* Header & Typography */
+h1, h2, h3, h4, h5, h6 {
+    color: #0F172A !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.02em;
+}
+
+/* --------------------------------------------------------------------
+   Hero & Header Banners
+   -------------------------------------------------------------------- */
+.hero-banner {
+    background: linear-gradient(135deg, #0F172A 0%, #1E293B 70%, #0F766E 100%);
+    border-radius: 18px;
+    padding: 38px 36px;
+    color: #FFFFFF;
+    margin-bottom: 28px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.15), 0 8px 10px -6px rgba(15, 23, 42, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-banner::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, rgba(20, 184, 166, 0.25) 0%, rgba(20, 184, 166, 0) 70%);
+    pointer-events: none;
+}
+
+.hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(20, 184, 166, 0.2);
+    border: 1px solid rgba(45, 212, 191, 0.35);
+    color: #5EEAD4;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 5px 12px;
+    border-radius: 9999px;
+    margin-bottom: 14px;
+}
+
+.hero-title {
+    color: #FFFFFF !important;
+    font-size: 2.15rem !important;
+    font-weight: 800 !important;
+    line-height: 1.25;
+    margin-bottom: 12px !important;
+}
+
+.hero-title span {
+    background: linear-gradient(90deg, #2DD4BF 0%, #5EEAD4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    color: #94A3B8;
+    font-size: 1.02rem;
+    max-width: 680px;
+    line-height: 1.55;
+    margin-bottom: 0px;
+}
+
+/* --------------------------------------------------------------------
+   KPI / Stat Cards
+   -------------------------------------------------------------------- */
+.stat-card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    padding: 22px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 140px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -2px rgba(0, 0, 0, 0.03);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 20px -4px rgba(15, 23, 42, 0.08), 0 6px 8px -4px rgba(15, 23, 42, 0.04);
+    border-color: #CBD5E1;
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #0D9488, #14B8A6);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.stat-card:hover::before {
+    opacity: 1;
+}
+
+.stat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.stat-title {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #64748B;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.stat-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: #F0FDFA;
+    color: #0D9488;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+}
+
+.stat-value {
+    font-size: 1.85rem;
+    font-weight: 800;
+    color: #0F172A;
+    line-height: 1.1;
+    margin-bottom: 6px;
+}
+
+.stat-footer {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.78rem;
+    color: #64748B;
+}
+
+.stat-badge-positive {
+    color: #0D9488;
+    font-weight: 600;
+    background: #CCFBF1;
+    padding: 2px 7px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+}
+
+/* --------------------------------------------------------------------
+   Property Cards
+   -------------------------------------------------------------------- */
+.property-card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px -2px rgba(0, 0, 0, 0.05);
+    transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-bottom: 22px;
+    display: flex;
+    flex-direction: column;
+}
+
+.property-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 28px -6px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+    border-color: #94A3B8;
+}
+
+.property-image-box {
+    position: relative;
+    width: 100%;
+    height: 195px;
+    overflow: hidden;
+    background-color: #E2E8F0;
+}
+
+.property-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.property-card:hover .property-image {
+    transform: scale(1.05);
+}
+
+.property-floating-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(6px);
+    color: #5EEAD4;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 8px;
+    letter-spacing: 0.03em;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.property-floating-city {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(4px);
+    color: #0F172A;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 4px 9px;
+    border-radius: 8px;
+}
+
+.property-content {
+    padding: 18px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.property-loc {
+    color: #0D9488;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 4px;
+}
+
+.property-name {
+    font-size: 1.08rem;
+    font-weight: 700;
+    color: #0F172A;
+    margin-bottom: 8px;
+    line-height: 1.35;
+}
+
+.property-desc {
+    color: #64748B;
+    font-size: 0.82rem;
+    line-height: 1.45;
+    margin-bottom: 14px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.property-specs-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 10px 0;
+    margin-bottom: 14px;
+    border-top: 1px solid #F1F5F9;
+    border-bottom: 1px solid #F1F5F9;
+}
+
+.spec-chip {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    color: #334155;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.property-footer-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: auto;
+}
+
+.property-price-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.price-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #64748B;
+    text-transform: uppercase;
+}
+
+.price-amount {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #0F172A;
+}
+
+.price-period {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: #64748B;
+}
+
+/* --------------------------------------------------------------------
+   Rent Estimator Specific Styles
+   -------------------------------------------------------------------- */
+.estimator-card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+    margin-bottom: 24px;
+}
+
+.result-card-container {
+    background: linear-gradient(135deg, #0F172A 0%, #1E293B 90%, #0F766E 100%);
+    border-radius: 20px;
+    padding: 32px 30px;
+    color: #FFFFFF;
+    box-shadow: 0 15px 30px -8px rgba(15, 23, 42, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.result-badge {
+    background: rgba(20, 184, 166, 0.2);
+    border: 1px solid rgba(45, 212, 191, 0.4);
+    color: #5EEAD4;
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 9999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 16px;
+}
+
+.result-price-highlight {
+    font-size: 2.85rem;
+    font-weight: 800;
+    color: #FFFFFF;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 4px;
+}
+
+.result-price-highlight span {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #94A3B8;
+}
+
+.range-capsule {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 12px 18px;
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.range-label {
+    font-size: 0.78rem;
+    color: #CBD5E1;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-weight: 600;
+}
+
+.range-values {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #5EEAD4;
+}
+
+.breakdown-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.85rem;
+    color: #CBD5E1;
+}
+
+.breakdown-row:last-child {
+    border-bottom: none;
+}
+
+.breakdown-val {
+    font-weight: 600;
+    color: #FFFFFF;
+}
+
+/* --------------------------------------------------------------------
+   Notice & Disclaimer Pill
+   -------------------------------------------------------------------- */
+.disclaimer-box {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-left: 4px solid #0D9488;
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 0.82rem;
+    color: #475569;
+    margin: 18px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.45;
+}
+
+/* --------------------------------------------------------------------
+   Sidebar Customizations
+   -------------------------------------------------------------------- */
+[data-testid="stSidebar"] {
+    background-color: #0F172A !important;
+    border-right: 1px solid #1E293B;
+}
+
+[data-testid="stSidebar"] h1, 
+[data-testid="stSidebar"] h2, 
+[data-testid="stSidebar"] h3, 
+[data-testid="stSidebar"] p, 
+[data-testid="stSidebar"] span,
+[data-testid="stSidebar"] label {
+    color: #E2E8F0 !important;
+}
+
+.sidebar-brand-box {
+    padding: 16px 8px 24px 8px;
+    border-bottom: 1px solid #1E293B;
+    margin-bottom: 20px;
+}
+
+.brand-title {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #FFFFFF !important;
+    letter-spacing: -0.01em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand-title span {
+    color: #2DD4BF !important;
+}
+
+.brand-tagline {
+    font-size: 0.78rem;
+    color: #94A3B8 !important;
+    margin-top: 4px;
+    line-height: 1.3;
+}
+
+.sidebar-badge {
+    background: rgba(20, 184, 166, 0.15);
+    border: 1px solid rgba(45, 212, 191, 0.3);
+    color: #5EEAD4 !important;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+    display: inline-block;
+    margin-top: 8px;
+    text-transform: uppercase;
+}
+
+/* Radio button refinement in sidebar */
+[data-testid="stSidebar"] .stRadio label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+}
+
+[data-testid="stSidebar"] .stRadio div[role="radiogroup"] > label:hover {
+    background-color: #1E293B;
+    color: #5EEAD4 !important;
+}
+
+/* --------------------------------------------------------------------
+   Buttons & Inputs
+   -------------------------------------------------------------------- */
+div.stButton > button:first-child {
+    background: linear-gradient(135deg, #0D9488 0%, #0F766E 100%) !important;
+    color: #FFFFFF !important;
+    font-weight: 700 !important;
+    font-size: 0.95rem !important;
+    padding: 0.65rem 1.6rem !important;
+    border-radius: 12px !important;
+    border: none !important;
+    box-shadow: 0 4px 12px rgba(13, 148, 136, 0.25) !important;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+div.stButton > button:first-child:hover {
+    background: linear-gradient(135deg, #14B8A6 0%, #0D9488 100%) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 18px rgba(13, 148, 136, 0.35) !important;
+}
+
+/* Streamlit container tweaks */
+.block-container {
+    padding-top: 2rem !important;
+    padding-bottom: 3.5rem !important;
+    max-width: 1200px !important;
+}
+
+/* Modern Step Card for About Page */
+.step-card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    padding: 24px 20px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
+}
+
+.step-number {
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, #0D9488 0%, #14B8A6 100%);
+    color: #FFFFFF;
+    font-weight: 800;
+    font-size: 1.15rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px auto;
+    box-shadow: 0 4px 10px rgba(13, 148, 136, 0.3);
+}
+
+.step-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #0F172A;
+    margin-bottom: 8px;
+}
+
+.step-desc {
+    font-size: 0.85rem;
+    color: #64748B;
+    line-height: 1.5;
+}
